@@ -1,0 +1,15 @@
+services:
+  postgres:
+    container_name: Civa_postgres_db   # nombre distinto
+    image: postgres:16
+    ports:
+      - "5432:5432"  # usa otro puerto en el host si 5432 ya está ocupado
+    environment:
+      POSTGRES_USER: Marcelo
+      POSTGRES_PASSWORD: Marcelo0904
+      POSTGRES_DB: BusesAPI_DB
+    volumes:
+      - civa_data:/var/lib/postgresql/data
+
+volumes:
+  civa_data:
